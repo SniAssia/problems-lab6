@@ -23,6 +23,7 @@ public class Library {
         }
     }
     public boolean add(Document doc){
+
         if (documents.size()==capacity){
             return false;
         }
@@ -30,10 +31,13 @@ public class Library {
         return true;
     }
     public boolean delete(Document doc){
-        if (documents.contains(doc)){
-            documents.remove(doc);
-            return true;
+        for (Document doc2 : documents){
+            if (doc.equals(doc2)){
+                documents.remove(doc2);
+                return true;
+            }
         }
+
         return false;
 
     }
